@@ -20,5 +20,6 @@ class Weather: Object {
     @objc dynamic var weatherDescription = ""
     @objc dynamic var location = ""
     @objc dynamic var country = ""
+    @objc dynamic var iconName = ""
     
 }

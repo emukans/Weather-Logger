@@ -17,7 +17,8 @@ class CurrentWeatherResponseParser: ApiResponseParser {
     func parse(data: JSON) throws -> Model {
         guard
             let weatherDesctiption = data["weather"].arrayValue.first,
-            let description = weatherDesctiption["description"].string
+            let description = weatherDesctiption["description"].string,
+            let iconName = weatherDesctiption["icon"].string
             else {
             throw ApiResponseParserError.ParsingError("Failed to parse current weather response")
         }
@@ -30,6 +31,7 @@ class CurrentWeatherResponseParser: ApiResponseParser {
         model.location = data["name"].stringValue
         model.wind = data["wind"]["speed"].doubleValue
         model.country = data["sys"]["country"].stringValue
+        model.iconName = iconName
         
         return model
     }

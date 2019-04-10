@@ -15,9 +15,25 @@ class HomeViewController: UIViewController {
     
     // MARK: - UI/Outlets
     
+    @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var degreeLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var weatherCondition: UILabel!
+    @IBOutlet weak var saveButton: UIButton! {
+        willSet {
+            newValue.layer.cornerRadius = 10
+        }
+    }
     
+    
+    // MARK: - Actions
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        print("Saved")
+    }
+    
+    
+    // MARK: - Internal properties
     
     let viewModel = WeatherViewModel()
     let disposeBag = DisposeBag()
@@ -31,7 +47,11 @@ class HomeViewController: UIViewController {
     
     private func bindRx() {
         viewModel.weather.asDriver().map { String(format: "%.f", $0) }.drive(degreeLabel.rx.text).disposed(by: disposeBag)
-        viewModel.location.asDriver().drive(cityLabel.rx.text).disposed(by: disposeBag)
+        viewModel.iconName.asDriver().map { UIImage(named: $0.rawValue) }.drive(weatherImageView.rx.image).disposed(by: disposeBag)
+        Driver.combineLatest(viewModel.location.asDriver(), viewModel.country.asDriver()).flatMapLatest { location, country in
+            return Driver.just("\(location), \(country)")
+        }.drive(cityLabel.rx.text).disposed(by: disposeBag)
+        viewModel.weatherDescription.asDriver().drive(weatherCondition.rx.text).disposed(by: disposeBag)
     }
     
 }

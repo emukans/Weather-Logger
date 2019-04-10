@@ -22,7 +22,22 @@ class WeatherViewModel {
     let location = BehaviorRelay<String>(value: "")
     let weatherDescription = BehaviorRelay<String>(value: "")
     let country = BehaviorRelay<String>(value: "")
+    let iconName = BehaviorRelay<WeatherIconType>(value: .fewClouds)
     
+    
+    // MARK: - Types
+    
+    enum WeatherIconType: String {
+        case clearSky = "clear-sky"
+        case brokenClouds = "broken-clouds"
+        case fewClouds = "few-clouds"
+        case mist = "mist"
+        case rain = "rain"
+        case scatteredClouds = "scattered-clouds"
+        case showerRain = "shower-rain"
+        case snow = "snow"
+        case thunderstorm = "thunderstorm"
+    }
     
     // MARK: - Internal properties
     
@@ -30,6 +45,7 @@ class WeatherViewModel {
     private enum Constant {
         static let rigaCoordinates = (56.95, 24.11)
     }
+    
     
     
     // MARK: - Implementation
@@ -45,6 +61,31 @@ class WeatherViewModel {
             strongSelf.location.accept(response.location)
             strongSelf.weatherDescription.accept(response.weatherDescription)
             strongSelf.country.accept(response.country)
+            
+            let iconName: WeatherIconType
+            switch response.iconName {
+            case "01d", "01n":
+                iconName = .clearSky
+            case "02d", "02n":
+                iconName = .fewClouds
+            case "03d", "03n":
+                iconName = .scatteredClouds
+            case "04d", "04n":
+                iconName = .brokenClouds
+            case "09d", "09n":
+                iconName = .showerRain
+            case "10d", "10n":
+                iconName = .rain
+            case "11d", "11n":
+                iconName = .thunderstorm
+            case "13d", "13n":
+                iconName = .snow
+            case "50d", "50n":
+                iconName = .mist
+            default:
+                iconName = .fewClouds
+            }
+            strongSelf.iconName.accept(iconName)
             
         }).disposed(by: disposeBag)
     }
