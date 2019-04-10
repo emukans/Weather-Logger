@@ -20,14 +20,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYB-hu-XBl">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uly-bV-e3O">
-                                        <rect key="frame" x="177.5" y="186" width="59" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uly-bV-e3O">
+                                        <rect key="frame" x="177.5" y="183.5" width="59" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1K-Lu-uD5">
-                                        <rect key="frame" x="160" y="50" width="94" height="96"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1K-Lu-uD5">
+                                        <rect key="frame" x="162.5" y="50" width="89" height="93.5"/>
+                                        <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="80"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsG-qt-0vL">
+                                        <rect key="frame" x="251.5" y="49" width="33" height="96"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,7 +43,9 @@
                                 <constraints>
                                     <constraint firstItem="uly-bV-e3O" firstAttribute="top" secondItem="z1K-Lu-uD5" secondAttribute="bottom" constant="40" id="Cnn-oK-3iW"/>
                                     <constraint firstItem="z1K-Lu-uD5" firstAttribute="top" secondItem="DYB-hu-XBl" secondAttribute="top" constant="50" id="I0t-td-ELl"/>
+                                    <constraint firstItem="PsG-qt-0vL" firstAttribute="centerY" secondItem="z1K-Lu-uD5" secondAttribute="centerY" id="WIr-mg-uKc"/>
                                     <constraint firstItem="z1K-Lu-uD5" firstAttribute="centerX" secondItem="DYB-hu-XBl" secondAttribute="centerX" id="lqA-nQ-1DV"/>
+                                    <constraint firstItem="PsG-qt-0vL" firstAttribute="leading" secondItem="z1K-Lu-uD5" secondAttribute="trailing" id="snd-Q9-zQc"/>
                                     <constraint firstItem="uly-bV-e3O" firstAttribute="centerX" secondItem="DYB-hu-XBl" secondAttribute="centerX" id="w02-Lc-B2a"/>
                                 </constraints>
                             </view>
