@@ -18,20 +18,19 @@ class CurrentWeatherResponseParser: ApiResponseParser {
         guard
             let weatherDesctiption = data["weather"].arrayValue.first,
             let description = weatherDesctiption["description"].string,
-            let iconName = weatherDesctiption["icon"].string
+            let iconName = weatherDesctiption["icon"].string,
+            let timestamp = data["dt"].int
             else {
             throw ApiResponseParserError.ParsingError("Failed to parse current weather response")
         }
         
         let model = Model()
         model.temperature = data["main"]["temp"].doubleValue
-        model.humidity = data["main"]["humidity"].doubleValue
-        model.pressure = data["main"]["pressure"].doubleValue
         model.weatherDescription = description
         model.location = data["name"].stringValue
-        model.wind = data["wind"]["speed"].doubleValue
         model.country = data["sys"]["country"].stringValue
         model.iconName = iconName
+        model.timestapm = timestamp
         
         return model
     }

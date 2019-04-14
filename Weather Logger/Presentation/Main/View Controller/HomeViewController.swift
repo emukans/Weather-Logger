@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        print("Saved")
+        self.viewModel.logWeather()
     }
     
     

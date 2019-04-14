@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23198F722261204700CD747F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F712261204700CD747F /* LocationService.swift */; };
 		23198F75226382AA00CD747F /* Observable+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F74226382AA00CD747F /* Observable+Helpers.swift */; };
+		23198F7722639E5000CD747F /* RealmConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F7622639E5000CD747F /* RealmConfiguration.swift */; };
 		234A1B21225A88B000C89020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A1B20225A88B000C89020 /* AppDelegate.swift */; };
 		234A1B28225A88B000C89020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A1B26225A88B000C89020 /* Main.storyboard */; };
 		234A1B2A225A88B100C89020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234A1B29225A88B100C89020 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		1817767B087B1C044AB65C0A /* Pods_Weather_Logger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_Logger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23198F712261204700CD747F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		23198F74226382AA00CD747F /* Observable+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Helpers.swift"; sourceTree = "<group>"; };
+		23198F7622639E5000CD747F /* RealmConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfiguration.swift; sourceTree = "<group>"; };
 		234A1B1D225A88B000C89020 /* Weather Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		234A1B20225A88B000C89020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234A1B27225A88B000C89020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				236BAF13225CE050006D369E /* Weather */,
 				236BAF16225CE2DA006D369E /* ApiResponseParser.swift */,
 				23198F712261204700CD747F /* LocationService.swift */,
+				23198F7622639E5000CD747F /* RealmConfiguration.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				236BAF1A225D1739006D369E /* CurrentWeatherResponseParser.swift in Sources */,
 				234A1B21225A88B000C89020 /* AppDelegate.swift in Sources */,
 				23198F75226382AA00CD747F /* Observable+Helpers.swift in Sources */,
+				23198F7722639E5000CD747F /* RealmConfiguration.swift in Sources */,
 				236BAF17225CE2DA006D369E /* ApiResponseParser.swift in Sources */,
 				236BAF28225D3B2A006D369E /* WeatherViewModel.swift in Sources */,
 				234A1B54225A90FC00C89020 /* HomeViewController.swift in Sources */,

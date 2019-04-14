@@ -13,13 +13,16 @@ import RealmSwift
 
 class Weather: Object {
     
+    @objc dynamic var id = 0
     @objc dynamic var temperature = 0.0
-    @objc dynamic var humidity = 0.0
-    @objc dynamic var pressure = 0.0
-    @objc dynamic var wind = 0.0
     @objc dynamic var weatherDescription = ""
     @objc dynamic var location = ""
     @objc dynamic var country = ""
     @objc dynamic var iconName = ""
+    @objc dynamic var timestapm = 0
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
     
 }

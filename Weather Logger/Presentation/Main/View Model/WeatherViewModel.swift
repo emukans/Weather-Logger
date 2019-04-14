@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 import RxCocoa
 import CoreLocation
+import Realm
+import RealmSwift
 
 
 class WeatherViewModel {
@@ -17,9 +19,7 @@ class WeatherViewModel {
     // MARK: - Output
     
     let weather = BehaviorRelay<Double>(value: 0.0)
-    let humidity = BehaviorRelay<Double>(value: 0.0)
-    let pressure = BehaviorRelay<Double>(value: 0.0)
-    let wind = BehaviorRelay<Double>(value: 0.0)
+    let timestamp = BehaviorRelay<Int>(value: 0)
     let location = BehaviorRelay<String>(value: "")
     let weatherDescription = BehaviorRelay<String>(value: "")
     let country = BehaviorRelay<String>(value: "")
@@ -60,12 +60,10 @@ class WeatherViewModel {
                     print(error)
                 case .success(let weather):
                     strongSelf.weather.accept(weather.temperature)
-                    strongSelf.humidity.accept(weather.humidity)
-                    strongSelf.pressure.accept(weather.pressure)
-                    strongSelf.wind.accept(weather.wind)
                     strongSelf.location.accept(weather.location)
                     strongSelf.weatherDescription.accept(weather.weatherDescription)
                     strongSelf.country.accept(weather.country)
+                    strongSelf.timestamp.accept(weather.timestapm)
                     
                     let iconName: WeatherIconType
                     switch weather.iconName {
@@ -96,6 +94,22 @@ class WeatherViewModel {
                 print("subscribtion error")
                 
             }).disposed(by: disposeBag)
+    }
+    
+    func logWeather() {
+        let weather = Weather()
+        weather.temperature = self.weather.value
+        weather.weatherDescription = self.weatherDescription.value
+        weather.location = self.location.value
+        weather.country = self.country.value
+        weather.iconName = self.iconName.value.rawValue
+        weather.timestapm = self.timestamp.value
+        weather.id = "\(self.timestamp.value)-\(self.location.value)".hashValue
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(weather, update: true)
+        }
     }
     
 }
