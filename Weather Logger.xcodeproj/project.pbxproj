@@ -10,6 +10,12 @@
 		23198F722261204700CD747F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F712261204700CD747F /* LocationService.swift */; };
 		23198F75226382AA00CD747F /* Observable+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F74226382AA00CD747F /* Observable+Helpers.swift */; };
 		23198F7722639E5000CD747F /* RealmConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F7622639E5000CD747F /* RealmConfiguration.swift */; };
+		23198F7A2263ABC800CD747F /* LogHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F792263ABC800CD747F /* LogHistoryViewModel.swift */; };
+		23198F7D2263B2AF00CD747F /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F7C2263B2AF00CD747F /* WeatherCell.swift */; };
+		23198F7F2263B2D000CD747F /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23198F7E2263B2D000CD747F /* WeatherCell.xib */; };
+		23198F812263B3D400CD747F /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F802263B3D400CD747F /* WeatherInfo.swift */; };
+		23198F832263B3EA00CD747F /* WeatherInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23198F822263B3EA00CD747F /* WeatherInfo.xib */; };
+		23198F872263BCC400CD747F /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F862263BCC400CD747F /* UIView+Helpers.swift */; };
 		234A1B21225A88B000C89020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A1B20225A88B000C89020 /* AppDelegate.swift */; };
 		234A1B28225A88B000C89020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A1B26225A88B000C89020 /* Main.storyboard */; };
 		234A1B2A225A88B100C89020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234A1B29225A88B100C89020 /* Assets.xcassets */; };
@@ -55,6 +61,12 @@
 		23198F712261204700CD747F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		23198F74226382AA00CD747F /* Observable+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Helpers.swift"; sourceTree = "<group>"; };
 		23198F7622639E5000CD747F /* RealmConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfiguration.swift; sourceTree = "<group>"; };
+		23198F792263ABC800CD747F /* LogHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHistoryViewModel.swift; sourceTree = "<group>"; };
+		23198F7C2263B2AF00CD747F /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		23198F7E2263B2D000CD747F /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
+		23198F802263B3D400CD747F /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		23198F822263B3EA00CD747F /* WeatherInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherInfo.xib; sourceTree = "<group>"; };
+		23198F862263BCC400CD747F /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		234A1B1D225A88B000C89020 /* Weather Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		234A1B20225A88B000C89020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234A1B27225A88B000C89020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,8 +129,28 @@
 			isa = PBXGroup;
 			children = (
 				23198F74226382AA00CD747F /* Observable+Helpers.swift */,
+				23198F862263BCC400CD747F /* UIView+Helpers.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		23198F782263ABAD00CD747F /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				23198F792263ABC800CD747F /* LogHistoryViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		23198F7B2263B28C00CD747F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				23198F7C2263B2AF00CD747F /* WeatherCell.swift */,
+				23198F7E2263B2D000CD747F /* WeatherCell.xib */,
+				23198F802263B3D400CD747F /* WeatherInfo.swift */,
+				23198F822263B3EA00CD747F /* WeatherInfo.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		234A1B14225A88B000C89020 = {
@@ -251,6 +283,8 @@
 		23AC0CC0225BCCFD00F23684 /* Log History */ = {
 			isa = PBXGroup;
 			children = (
+				23198F7B2263B28C00CD747F /* View */,
+				23198F782263ABAD00CD747F /* View Model */,
 				23AC0CC1225BCD1100F23684 /* View Controller */,
 			);
 			path = "Log History";
@@ -401,6 +435,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23198F832263B3EA00CD747F /* WeatherInfo.xib in Resources */,
+				23198F7F2263B2D000CD747F /* WeatherCell.xib in Resources */,
 				234A1B2D225A88B100C89020 /* LaunchScreen.storyboard in Resources */,
 				234A1B2A225A88B100C89020 /* Assets.xcassets in Resources */,
 				234A1B28225A88B000C89020 /* Main.storyboard in Resources */,
@@ -565,10 +601,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23198F812263B3D400CD747F /* WeatherInfo.swift in Sources */,
 				23AC0CC3225BCD2600F23684 /* LogHistoryViewController.swift in Sources */,
 				236BAF15225CE14B006D369E /* WeatherApi.swift in Sources */,
 				236BAF1A225D1739006D369E /* CurrentWeatherResponseParser.swift in Sources */,
 				234A1B21225A88B000C89020 /* AppDelegate.swift in Sources */,
+				23198F7D2263B2AF00CD747F /* WeatherCell.swift in Sources */,
+				23198F872263BCC400CD747F /* UIView+Helpers.swift in Sources */,
+				23198F7A2263ABC800CD747F /* LogHistoryViewModel.swift in Sources */,
 				23198F75226382AA00CD747F /* Observable+Helpers.swift in Sources */,
 				23198F7722639E5000CD747F /* RealmConfiguration.swift in Sources */,
 				236BAF17225CE2DA006D369E /* ApiResponseParser.swift in Sources */,
