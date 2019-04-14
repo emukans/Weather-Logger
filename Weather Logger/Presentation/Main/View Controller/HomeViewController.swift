@@ -16,9 +16,21 @@ class HomeViewController: UIViewController {
     // MARK: - UI/Outlets
     
     @IBOutlet weak var weatherImageView: UIImageView!
-    @IBOutlet weak var degreeLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var weatherCondition: UILabel!
+    @IBOutlet weak var degreeLabel: UILabel! {
+        willSet {
+            newValue.text = "0"
+        }
+    }
+    @IBOutlet weak var cityLabel: UILabel! {
+        willSet {
+            newValue.text = ""
+        }
+    }
+    @IBOutlet weak var weatherCondition: UILabel! {
+        willSet {
+            newValue.text = ""
+        }
+    }
     @IBOutlet weak var saveButton: UIButton! {
         willSet {
             newValue.layer.cornerRadius = 10
@@ -49,6 +61,9 @@ class HomeViewController: UIViewController {
         viewModel.weather.asDriver().map { String(format: "%.f", $0) }.drive(degreeLabel.rx.text).disposed(by: disposeBag)
         viewModel.iconName.asDriver().map { UIImage(named: $0.rawValue) }.drive(weatherImageView.rx.image).disposed(by: disposeBag)
         Driver.combineLatest(viewModel.location.asDriver(), viewModel.country.asDriver()).flatMapLatest { location, country in
+            if (location.isEmpty || country.isEmpty) {
+                return Driver.just("")
+            }
             return Driver.just("\(location), \(country)")
         }.drive(cityLabel.rx.text).disposed(by: disposeBag)
         viewModel.weatherDescription.asDriver().drive(weatherCondition.rx.text).disposed(by: disposeBag)
