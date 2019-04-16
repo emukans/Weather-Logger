@@ -1,6 +1,10 @@
 PODS:
   - Alamofire (4.8.1)
   - Differentiator (3.1.0)
+  - MarqueeLabel/Swift (3.2.1)
+  - NotificationBannerSwift (2.0.1):
+    - MarqueeLabel/Swift (~> 3.2.0)
+    - SnapKit (~> 4.2.0)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
   - Realm/Headers (3.13.1)
@@ -26,9 +30,11 @@ PODS:
   - RxTest (4.4.1):
     - RxAtomic (~> 4.4)
     - RxSwift (~> 4.0)
+  - SnapKit (4.2.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - NotificationBannerSwift (~> 2.0)
   - RealmSwift (~> 3.0)
   - RxAlamofire (~> 4.0)
   - RxBlocking (~> 4.0)
@@ -42,6 +48,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Differentiator
+    - MarqueeLabel
+    - NotificationBannerSwift
     - Realm
     - RealmSwift
     - RxAlamofire
@@ -51,11 +59,14 @@ SPEC REPOS:
     - RxDataSources
     - RxSwift
     - RxTest
+    - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
+  NotificationBannerSwift: 007774aa590cc9680647b92b2f217bef5c00c32c
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   RxAlamofire: 09624d0f2d48ed8b686e4eb4cf68e28cbd2df556
@@ -65,8 +76,9 @@ SPEC CHECKSUMS:
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
   RxTest: f8e548755ca3c7502dc41c7d3b28802c90115a38
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 97bcf057a161f08d9565643f5b8fc5ba2b833901
+PODFILE CHECKSUM: 86106a7227d27fec1fea0bfe78dc52708fe61202
 
 COCOAPODS: 1.5.3

@@ -45,6 +45,7 @@ class WeatherViewModel {
     let disposeBag = DisposeBag()
     
     let locationService = LocationService.shared
+    let serviceError = PublishRelay<String>()
     
     
     // MARK: - Implementation
@@ -56,8 +57,8 @@ class WeatherViewModel {
                 guard let strongSelf = self else { return }
                 
                 switch response {
-                case .failure(let error):
-                    print(error)
+                case .failure:
+                    strongSelf.serviceError.accept("Weather service is not available.")
                 case .success(let weather):
                     strongSelf.weather.accept(weather.temperature)
                     strongSelf.location.accept(weather.location)
@@ -90,10 +91,13 @@ class WeatherViewModel {
                     }
                     strongSelf.iconName.accept(iconName)
                 }
-            }, onError: { error in
-                print("subscribtion error")
-                
+            }, onError: { [weak self] error in
+                self?.serviceError.accept("Please check your connection.")
             }).disposed(by: disposeBag)
+        
+        self.serviceError.observeOn(MainScheduler.instance).subscribe(onNext: { message in
+            NotificationView.showFailureAlert(message: message)
+        }).disposed(by: disposeBag)
     }
     
     func logWeather() {
@@ -106,10 +110,17 @@ class WeatherViewModel {
         weather.timestapm = self.timestamp.value
         weather.id = "\(self.timestamp.value)-\(self.location.value)".hashValue
         
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(weather, update: true)
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(weather, update: true)
+            }
+        } catch {
+            NotificationView.showFailureAlert(message: "Can't save weather right now.")
+            return
         }
+        
+        NotificationView.showSuccessAlert(message: "Weather saved.")
     }
     
 }

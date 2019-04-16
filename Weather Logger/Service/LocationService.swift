@@ -17,7 +17,7 @@ class LocationService: NSObject, CLLocationManagerDelegate
     
     let locationManager: CLLocationManager
     var isLocationServiceEnabled = true
-    let lastUpdatedLocation = BehaviorRelay<CLLocation?>(value: nil)
+    let lastUpdatedLocation = PublishRelay<CLLocation?>()
 
     
     // MARK: - Initialization

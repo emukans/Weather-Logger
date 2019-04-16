@@ -12,6 +12,7 @@ target 'Weather Logger' do
     pod 'SwiftyJSON', '~> 4.0'
     pod 'RealmSwift', '~> 3.0'
     pod 'RxDataSources', '~> 3.0'
+    pod 'NotificationBannerSwift', '~> 2.0'
     
     target 'Weather LoggerTests' do
         inherit! :search_paths

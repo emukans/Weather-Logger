@@ -17,6 +17,7 @@
 		23198F832263B3EA00CD747F /* WeatherInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23198F822263B3EA00CD747F /* WeatherInfo.xib */; };
 		23198F872263BCC400CD747F /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23198F862263BCC400CD747F /* UIView+Helpers.swift */; };
 		232971612265207400006AC4 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232971602265207400006AC4 /* UIColor+Custom.swift */; };
+		232971652265C0C000006AC4 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232971642265C0C000006AC4 /* NotificationView.swift */; };
 		234A1B21225A88B000C89020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A1B20225A88B000C89020 /* AppDelegate.swift */; };
 		234A1B28225A88B000C89020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A1B26225A88B000C89020 /* Main.storyboard */; };
 		234A1B2A225A88B100C89020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234A1B29225A88B100C89020 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		23198F822263B3EA00CD747F /* WeatherInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherInfo.xib; sourceTree = "<group>"; };
 		23198F862263BCC400CD747F /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		232971602265207400006AC4 /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
+		232971642265C0C000006AC4 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		234A1B1D225A88B000C89020 /* Weather Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		234A1B20225A88B000C89020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234A1B27225A88B000C89020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		232971622265C09E00006AC4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				232971632265C0B000006AC4 /* View */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		232971632265C0B000006AC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				232971642265C0C000006AC4 /* NotificationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		234A1B14225A88B000C89020 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +233,7 @@
 				23AC0CC0225BCCFD00F23684 /* Log History */,
 				234A1B51225A899100C89020 /* Main */,
 				23198F732263822A00CD747F /* Utils */,
+				232971622265C09E00006AC4 /* Shared */,
 				234A1B26225A88B000C89020 /* Main.storyboard */,
 				234A1B2B225A88B100C89020 /* LaunchScreen.storyboard */,
 			);
@@ -546,6 +565,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Weather Logger/Pods-Weather Logger-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
@@ -553,6 +574,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -561,6 +583,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
@@ -568,6 +592,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +635,7 @@
 				236BAF15225CE14B006D369E /* WeatherApi.swift in Sources */,
 				236BAF1A225D1739006D369E /* CurrentWeatherResponseParser.swift in Sources */,
 				234A1B21225A88B000C89020 /* AppDelegate.swift in Sources */,
+				232971652265C0C000006AC4 /* NotificationView.swift in Sources */,
 				23198F7D2263B2AF00CD747F /* WeatherCell.swift in Sources */,
 				23198F872263BCC400CD747F /* UIView+Helpers.swift in Sources */,
 				23198F7A2263ABC800CD747F /* LogHistoryViewModel.swift in Sources */,
