@@ -30,6 +30,10 @@ class LocationService: NSObject, CLLocationManagerDelegate
     
     override init() {
         self.locationManager = CLLocationManager()
+        self.locationManager.distanceFilter = 200.0
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        self.locationManager.headingFilter = 1.0
+
         super.init()
         
         if CLLocationManager.locationServicesEnabled() {
