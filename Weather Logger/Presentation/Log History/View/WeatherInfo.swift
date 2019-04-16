@@ -30,16 +30,11 @@ class WeatherInfo: UIView {
         
         var color: UIColor {
             switch self {
-            case .cold:
-                return UIColor(red:0.539, green:0.621, blue:0.805, alpha:1.0)
-            case .cool:
-                return UIColor(red:0.797, green:0.902, blue:0.898, alpha:1.0)
-            case .normal:
-                return UIColor(red:0.589, green:0.789, blue:0.523, alpha:1.0)
-            case .warm:
-                return UIColor(red:0.992, green:0.871, blue:0.551, alpha:1.0)
-            case .hot:
-                return UIColor(red:0.965, green:0.633, blue:0.191, alpha:1.0)
+            case .cold: return UIColor.WeatherLogger.coldWeatherColor
+            case .cool: return UIColor.WeatherLogger.coolWeatherColor
+            case .normal: return UIColor.WeatherLogger.normalWeatherColor
+            case .warm: return UIColor.WeatherLogger.warmWeatherColor
+            case .hot: return UIColor.WeatherLogger.hotWeatherColor
             }
         }
     }

@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Realm.Configuration.defaultConfiguration = RealmConfiguration().getConfig()
+        UIImageView.appearance(whenContainedInInstancesOf: [LogHistoryViewController.self]).tintColor = UIColor(red: 0.883, green: 0.316, blue: 0.281, alpha: 1)
         
         return true
     }

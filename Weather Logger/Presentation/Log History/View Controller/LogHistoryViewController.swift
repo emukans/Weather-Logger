@@ -44,7 +44,7 @@ class LogHistoryViewController: UIViewController, UITableViewDelegate {
     
     func configueTableView() {
         logHistoryTableView.register(WeatherCell.self, forCellReuseIdentifier: WeatherCell.viewIdentifier)
-        logHistoryTableView.delegate = self
+        logHistoryTableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
     func configureDataSource() {
@@ -52,12 +52,30 @@ class LogHistoryViewController: UIViewController, UITableViewDelegate {
             configureCell: { (_, colectionView, indexPath, model) -> UITableViewCell in
                 let cell = colectionView.dequeueReusableCell(withIdentifier: WeatherCell.viewIdentifier, for: indexPath) as! WeatherCell
                 cell.configure(withModel: model)
+                cell.selectionStyle = .none
                 
                 return cell
         })
+        dataSource.canEditRowAtIndexPath = { dataSource, indexPath  in
+            return true
+        }
         
         viewModel.logHistoryData.asDriver().drive(logHistoryTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let responding = UIContextualAction(style: .destructive, title: nil, handler: { [weak self] (_, _, success: (Bool) -> Void) in
+            guard let strongSelf = self else { return }
+            
+            let isDeleted = strongSelf.viewModel.removeItem(at: indexPath)
+            success(isDeleted)
+        })
+
+        responding.backgroundColor = UIColor.WeatherLogger.defaultBackgroundColor
+        responding.image = UIImage(named: "icon-bin")
+
+        return UISwipeActionsConfiguration(actions: [responding])
+    }
+
 }

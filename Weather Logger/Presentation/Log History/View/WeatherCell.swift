@@ -34,6 +34,7 @@ class WeatherCell: UITableViewCell {
     // MARK: - Configuration
     
     func configure(withModel model: Weather) {
+        self.backgroundColor = UIColor.WeatherLogger.defaultBackgroundColor
         weatherInfo.configure(withWeather: model)
     }
     

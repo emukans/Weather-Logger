@@ -39,4 +39,20 @@ class LogHistoryViewModel {
         logHistoryData.accept([sectionModel])
     }
     
+    func removeItem(at index: IndexPath) -> Bool {
+        guard let section = logHistoryData.value.first else { return false }
+        
+        do {
+            let realm = try Realm()
+            
+            try realm.write {
+                realm.delete(section.items[index.row])
+            }
+        } catch {
+            return false
+        }
+        
+        return true
+    }
+    
 }
