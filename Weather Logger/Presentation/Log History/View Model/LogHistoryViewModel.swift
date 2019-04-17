@@ -30,7 +30,7 @@ class LogHistoryViewModel {
     func updateData() {
         let realm = try! Realm()
         var initialWeatherList: [Weather] = []
-        let dbWeather = realm.objects(Weather.self)
+        let dbWeather = realm.objects(Weather.self).sorted(byKeyPath: "timestapm", ascending: false)
         
         for i in 0..<min(dbWeather.count, 20) {
             initialWeatherList.append(dbWeather[i])
@@ -39,8 +39,8 @@ class LogHistoryViewModel {
         logHistoryData.accept([sectionModel])
     }
     
-    func removeItem(at index: IndexPath) -> Bool {
-        guard let section = logHistoryData.value.first else { return false }
+    func removeItem(at index: IndexPath) {
+        guard let section = logHistoryData.value.first else { return }
         
         do {
             let realm = try Realm()
@@ -49,10 +49,8 @@ class LogHistoryViewModel {
                 realm.delete(section.items[index.row])
             }
         } catch {
-            return false
+            NotificationView.showFailureAlert(message: "Can't delete log right now.")
         }
-        
-        return true
     }
     
 }

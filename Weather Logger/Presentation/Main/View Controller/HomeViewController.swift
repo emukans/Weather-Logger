@@ -38,13 +38,6 @@ class HomeViewController: UIViewController {
     }
     
     
-    // MARK: - Actions
-    
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        self.viewModel.logWeather()
-    }
-    
-    
     // MARK: - Internal properties
     
     let viewModel = WeatherViewModel()
@@ -67,6 +60,9 @@ class HomeViewController: UIViewController {
             return Driver.just("\(location), \(country)")
         }.drive(cityLabel.rx.text).disposed(by: disposeBag)
         viewModel.weatherDescription.asDriver().drive(weatherCondition.rx.text).disposed(by: disposeBag)
+        saveButton.rx.tap.throttle(3.0, scheduler: MainScheduler.instance).bind { [weak self] in
+            self?.viewModel.logWeather()
+        }.disposed(by: disposeBag)
     }
     
 }

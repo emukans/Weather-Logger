@@ -21,9 +21,9 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rainy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piK-J9-q2A">
-                    <rect key="frame" x="95" y="45.5" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piK-J9-q2A">
+                    <rect key="frame" x="95" y="50.5" width="30.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -45,7 +45,7 @@
             <constraints>
                 <constraint firstItem="QfE-wc-vOx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uYO-vJ-AQ9" secondAttribute="trailing" constant="10" id="266-ol-OdX"/>
                 <constraint firstItem="QfE-wc-vOx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3zX-kM-UEO"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="piK-J9-q2A" secondAttribute="bottom" constant="5" id="7mm-Sk-wS4"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="piK-J9-q2A" secondAttribute="bottom" constant="10" id="7mm-Sk-wS4"/>
                 <constraint firstItem="QfE-wc-vOx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="piK-J9-q2A" secondAttribute="trailing" constant="10" id="EN4-gf-nDN"/>
                 <constraint firstAttribute="bottom" secondItem="LHQ-lO-IJc" secondAttribute="bottom" constant="20" id="ID5-uM-w4O"/>
                 <constraint firstItem="LHQ-lO-IJc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="KL7-Py-VZs"/>
@@ -54,7 +54,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QfE-wc-vOx" secondAttribute="trailing" constant="20" id="SU0-xX-KrQ"/>
                 <constraint firstItem="uYO-vJ-AQ9" firstAttribute="leading" secondItem="LHQ-lO-IJc" secondAttribute="trailing" constant="15" id="YgG-05-G9T"/>
                 <constraint firstItem="LHQ-lO-IJc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="cD0-0M-pVX"/>
-                <constraint firstItem="piK-J9-q2A" firstAttribute="top" secondItem="uYO-vJ-AQ9" secondAttribute="bottom" constant="5" id="dRT-5q-ZO1"/>
+                <constraint firstItem="piK-J9-q2A" firstAttribute="top" secondItem="uYO-vJ-AQ9" secondAttribute="bottom" constant="10" id="dRT-5q-ZO1"/>
                 <constraint firstItem="LHQ-lO-IJc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tWz-9P-KGm"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -62,10 +62,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="dateLabel" destination="piK-J9-q2A" id="thz-Zf-eal"/>
                 <outlet property="imageView" destination="LHQ-lO-IJc" id="TPj-B7-11Q"/>
                 <outlet property="locationLabel" destination="uYO-vJ-AQ9" id="hgv-cE-D5A"/>
                 <outlet property="temperatureLabel" destination="QfE-wc-vOx" id="M9Q-pt-Edx"/>
-                <outlet property="weatherDescriptionLabel" destination="piK-J9-q2A" id="Zv6-pA-cxH"/>
             </connections>
         </view>
     </objects>

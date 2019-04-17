@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Weather-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="HomeViewController" customModule="Weather_Logger" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uly-bV-e3O">
-                                        <rect key="frame" x="20" y="459.5" width="374" height="33.5"/>
+                                        <rect key="frame" x="20" y="449.5" width="374" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -51,12 +51,9 @@
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="saveButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="qv7-Xq-U2O"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rainy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8I3-4b-uGe">
-                                        <rect key="frame" x="180.5" y="503" width="53" height="26.5"/>
+                                        <rect key="frame" x="180.5" y="493" width="53" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -69,14 +66,14 @@
                                     <constraint firstItem="Ips-Vq-rmm" firstAttribute="top" secondItem="DYB-hu-XBl" secondAttribute="top" constant="30" id="6K0-rd-VGb"/>
                                     <constraint firstItem="z1K-Lu-uD5" firstAttribute="centerY" secondItem="DYB-hu-XBl" secondAttribute="centerY" id="Bsj-Vf-4Y2"/>
                                     <constraint firstItem="uly-bV-e3O" firstAttribute="leading" secondItem="DYB-hu-XBl" secondAttribute="leading" constant="20" id="CBr-9Z-ZFp"/>
-                                    <constraint firstItem="uly-bV-e3O" firstAttribute="top" secondItem="z1K-Lu-uD5" secondAttribute="bottom" constant="40" id="Cnn-oK-3iW"/>
+                                    <constraint firstItem="uly-bV-e3O" firstAttribute="top" secondItem="z1K-Lu-uD5" secondAttribute="bottom" constant="30" id="Cnn-oK-3iW"/>
                                     <constraint firstItem="0xx-ug-Ci1" firstAttribute="centerX" secondItem="DYB-hu-XBl" secondAttribute="centerX" id="KwT-FK-Q9h"/>
                                     <constraint firstItem="8I3-4b-uGe" firstAttribute="top" secondItem="uly-bV-e3O" secondAttribute="bottom" constant="10" id="Qoi-0a-gsR"/>
                                     <constraint firstItem="Ips-Vq-rmm" firstAttribute="leading" secondItem="DYB-hu-XBl" secondAttribute="leading" constant="20" id="T5F-tM-uQw"/>
                                     <constraint firstAttribute="trailing" secondItem="Ips-Vq-rmm" secondAttribute="trailing" constant="20" id="VlV-ue-u0J"/>
                                     <constraint firstItem="PsG-qt-0vL" firstAttribute="centerY" secondItem="z1K-Lu-uD5" secondAttribute="centerY" id="WIr-mg-uKc"/>
                                     <constraint firstItem="Ips-Vq-rmm" firstAttribute="centerX" secondItem="DYB-hu-XBl" secondAttribute="centerX" id="WjI-na-Puk"/>
-                                    <constraint firstItem="z1K-Lu-uD5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ips-Vq-rmm" secondAttribute="bottom" constant="10" id="Y7F-OI-sZa"/>
+                                    <constraint firstItem="z1K-Lu-uD5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ips-Vq-rmm" secondAttribute="bottom" constant="30" id="Y7F-OI-sZa"/>
                                     <constraint firstAttribute="bottom" secondItem="0xx-ug-Ci1" secondAttribute="bottom" constant="30" id="aae-T1-A1l"/>
                                     <constraint firstAttribute="trailing" secondItem="0xx-ug-Ci1" secondAttribute="trailing" constant="20" id="jEC-50-fuN"/>
                                     <constraint firstItem="z1K-Lu-uD5" firstAttribute="centerX" secondItem="DYB-hu-XBl" secondAttribute="centerX" id="lqA-nQ-1DV"/>
@@ -96,7 +93,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="weather-icon" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="cityLabel" destination="uly-bV-e3O" id="nax-xH-Rjg"/>
                         <outlet property="degreeLabel" destination="z1K-Lu-uD5" id="6i0-xp-U0z"/>
@@ -109,7 +106,7 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--Logs-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="LogHistoryViewController" customModule="Weather_Logger" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,7 +128,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Logs" image="log-icon" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="logHistoryTableView" destination="kne-ho-NDZ" id="x99-3J-nsu"/>
                     </connections>
@@ -161,7 +158,7 @@
     </scenes>
     <resources>
         <image name="few-clouds" width="232" height="162"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="log-icon" width="25" height="26"/>
+        <image name="weather-icon" width="25" height="25"/>
     </resources>
 </document>

@@ -14,8 +14,16 @@ class WeatherInfo: UIView {
     // MARK: - UI/Outlets
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var weatherDescriptionLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel! {
+        willSet {
+            newValue.text = ""
+        }
+    }
+    @IBOutlet weak var dateLabel: UILabel! {
+        willSet {
+            newValue.text = ""
+        }
+    }
     @IBOutlet weak var temperatureLabel: UILabel!
     
     
@@ -44,12 +52,16 @@ class WeatherInfo: UIView {
     
     func configure(withWeather weather: Weather) {
         imageView.image = UIImage(named: weather.iconName)
-        weatherDescriptionLabel.text = weather.weatherDescription
         temperatureLabel.text = String(format: "%.f\u{00B0}", weather.temperature)
-        if (weather.location.isEmpty || weather.country.isEmpty) {
-            locationLabel.text = ""
-        } else {
+        if (!weather.location.isEmpty && !weather.country.isEmpty) {
             locationLabel.text = "\(weather.location), \(weather.country)"
+        }
+        
+        if weather.timestapm != 0 {
+            let date = Date(timeIntervalSince1970: Double(weather.timestapm))
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+            dateLabel.text = dateFormatter.string(from: date)
         }
         
         self.layer.cornerRadius = 10

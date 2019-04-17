@@ -68,8 +68,8 @@ class LogHistoryViewController: UIViewController, UITableViewDelegate {
         let responding = UIContextualAction(style: .destructive, title: nil, handler: { [weak self] (_, _, success: (Bool) -> Void) in
             guard let strongSelf = self else { return }
             
-            let isDeleted = strongSelf.viewModel.removeItem(at: indexPath)
-            success(isDeleted)
+            success(true)
+            strongSelf.viewModel.removeItem(at: indexPath)
         })
 
         responding.backgroundColor = UIColor.WeatherLogger.defaultBackgroundColor
